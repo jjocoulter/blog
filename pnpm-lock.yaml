@@ -9,6 +9,7 @@ specifiers:
   react: 17.0.2
   react-dom: 17.0.2
   react-firebase-hooks: ^3.0.4
+  react-hot-toast: ^2.0.0
   typescript: ^4.3.4
 
 dependencies:
@@ -17,6 +18,7 @@ dependencies:
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-firebase-hooks: 3.0.4_firebase@8.6.8+react@17.0.2
+  react-hot-toast: 2.0.0_react-dom@17.0.2+react@17.0.2
 
 devDependencies:
   '@types/react': 17.0.11
@@ -1755,6 +1757,12 @@ packages:
       slash: 3.0.0
     dev: true
 
+  /goober/2.0.38:
+    resolution: {integrity: sha512-oGrP8xMB3k6EEcEAuKstd05r0JRFs8L9ouPCTKxupu85PdDJ443LTCXvxRVMeYN6pVhV6htVb7FaKTk5JlFzCQ==}
+    peerDependencies:
+      csstype: ^2.6.2
+    dev: false
+
   /graceful-fs/4.2.6:
     resolution: {integrity: sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==}
 
@@ -2786,6 +2794,20 @@ packages:
     dependencies:
       firebase: 8.6.8
       react: 17.0.2
+    dev: false
+
+  /react-hot-toast/2.0.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-J0J2rcSvKetlziVquwESgk85pV9JB0Dz3RJIZcAEv7CWU2y2z8BQqxmZHZUxjPKIBGPqXAocZch4Kj4oUdX4+w==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      goober: 2.0.38
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    transitivePeerDependencies:
+      - csstype
     dev: false
 
   /react-is/16.13.1:
