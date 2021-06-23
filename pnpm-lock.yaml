@@ -5,6 +5,7 @@ specifiers:
   eslint: 7.29.0
   eslint-config-next: 11.0.0
   firebase: ^8.6.8
+  lodash.debounce: ^4.0.8
   next: 11.0.0
   react: 17.0.2
   react-dom: 17.0.2
@@ -14,6 +15,7 @@ specifiers:
 
 dependencies:
   firebase: 8.6.8
+  lodash.debounce: 4.0.8
   next: 11.0.0_2dbe935e140170ce01c975771f1adcbd
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -2145,6 +2147,10 @@ packages:
   /lodash.clonedeep/4.5.0:
     resolution: {integrity: sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=}
     dev: true
+
+  /lodash.debounce/4.0.8:
+    resolution: {integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=}
+    dev: false
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
