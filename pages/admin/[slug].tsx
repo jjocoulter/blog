@@ -1,5 +1,6 @@
 import styles from "@styles/Admin.module.css";
 import AuthCheck from "@components/AuthCheck";
+import ImageUploader from "@components/ImageUploader";
 import { firestore, auth, serverTimestamp } from "@lib/firebase";
 
 import { useState } from "react";
@@ -62,10 +63,12 @@ function PostManager() {
 }
 
 function PostForm({ defaultValues, postRef, preview }) {
-  const { register, handleSubmit, reset, watch } = useForm({
+  const { register, handleSubmit, reset, watch, formState } = useForm({
     defaultValues,
     mode: "onChange",
   });
+
+  const { isValid, isDirty, errors } = formState;
 
   const updatePost = async ({ content, published }) => {
     console.log(content);
@@ -91,6 +94,8 @@ function PostForm({ defaultValues, postRef, preview }) {
         </div>
       )}
       <div className={preview ? styles.hidden : styles.controls}>
+        <ImageUploader />
+
         <textarea
           name="content"
           {...register("content", {
@@ -99,6 +104,11 @@ function PostForm({ defaultValues, postRef, preview }) {
             required: { value: true, message: "content is required" },
           })}
         ></textarea>
+
+        {errors.content && (
+          <p className="text-danger">{errors.content.message}</p>
+        )}
+
         <fieldset>
           <input
             className={styles.checkbox}
@@ -109,7 +119,11 @@ function PostForm({ defaultValues, postRef, preview }) {
           <label>Published</label>
         </fieldset>
 
-        <button type="submit" className="btn-green">
+        <button
+          type="submit"
+          className="btn-green"
+          disabled={!isValid || !isDirty}
+        >
           Save Changes
         </button>
       </div>
