@@ -71,10 +71,6 @@ function PostForm({ defaultValues, postRef, preview }) {
   const { isValid, isDirty, errors } = formState;
 
   const updatePost = async ({ content, published }) => {
-    console.log(content);
-    console.log(published);
-    console.log(defaultValues);
-
     await postRef.update({
       content,
       published,
